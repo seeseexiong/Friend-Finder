@@ -1,0 +1,8 @@
+{
+    "name": "Friend finder",
+    "description": "",
+    "repository": "git+https://github.com/seeseexiong/Friend-Finder---Node-and-Express-Servers.git",
+    "logo":"",
+    "keywords": ["node", "express", "dating app"],
+    "image": ""
+}
