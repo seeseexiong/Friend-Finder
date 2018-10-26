@@ -1,1 +1,0 @@
-<?php header( 'Location: /FriendFinder/server.js ') ; ?>
