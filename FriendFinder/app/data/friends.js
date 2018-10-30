@@ -1,5 +1,3 @@
-module.exports = function(app){
-
     // User's answers (DATA) ================================
     //new data gets push in this array
     let allScores = [
@@ -30,4 +28,9 @@ module.exports = function(app){
         allScores.push(req.body)
     });
 
-}
+    let matching = {};
+    for (var i = 0; i<allScores.length; i++) {
+        if (mathing === allScores[{}])
+        return allScore[i].name;
+        return allScore[i].photo;
+    }

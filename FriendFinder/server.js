@@ -1,7 +1,7 @@
 //Dependencies are express, body-parse, and path
 var express = require("express");
 var bodyParser = require("body-parser");
-var path = require("path");
+
 
 //Express App ==========================================
 var app = express();
@@ -13,20 +13,21 @@ app.use(bodyParser.json());
 
 
 //default set to home page route
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "/app/public/home.html"));
-});
+// app.get("/", function(req, res) {
+//     res.sendFile(path.join(__dirname, "/app/public/home.html"));
+// });
 
-// route to survey page
-app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "/app/public/survey.html"));
-});
+// // route to survey page
+// app.get("/survey", function(req, res) {
+    
+//     res.sendFile(path.join(__dirname, "/app/public/survey.html"));
+// });
 
 //link html routes here (CAN'T GET THIS PATH RIGHT)================================================
-// let htmlRoutes = require("./app/routing/htmlRoutes.js");
-// htmlRoutes(app);
+let htmlRoutes = require("./app/routing/htmlRoutes");
+htmlRoutes(app);
 
-// // link api routes here ================================================
+// link api routes here ================================================
 // let apiRoutes = require('./app/routing/apiRoutes');
 // apiRoutes(app);
 
@@ -57,7 +58,30 @@ app.get("/api/friends",function(req,res){
 })
 
 app.post("/api/friends",function(req,res){
-    allScores.push(req.body)
+    //console.log("pinged");
+    let currentFreind = req.body;
+    let bestMatch; 
+    let bestScore = 500;
+    for (let i=0; i<allScores.length; i++){
+        let currentMatch = 0;
+        let newFriend = allScores[i];  // newFriend is someone from the allScores array
+        for(let j=0; j<newFriend.scores.length; j++){
+            let a = parseInt(newFriend.scores[j]);
+            let b = parseInt(currentFreind.scores[j]);
+
+            currentMatch += Math.abs(a-b)
+            console.log(currentMatch);
+        }
+        //the newFriend with the least absolute number is the closest match
+        if(currentMatch < bestScore){
+            bestMatch = newFriend;
+            bestScore = currentMatch;
+            console.log(bestMatch);
+        }
+    }
+    allScores.push(currentFreind);
+    console.log(bestMatch)
+    res.send(bestMatch)
 });
 
 // Starts the server to begin listening =================
