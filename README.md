@@ -5,9 +5,9 @@ The survey is consist of 10 questions. Each answer is scale of 1 to 5 based on h
 Friend-Finder is deployed on heroku. Click on this url to use Friend-Finder https://ancient-peak-55125.herokuapp.com/ 
 
 ## Built with:
-*Bootstrap - The web framework used
-*Node JS
-*Express JS to handle routhing
+* Bootstrap - The web framework used
+* Node JS
+* Express JS to handle routhing
 
 ### This app is full stack Node.js application.  
 
