@@ -13,6 +13,6 @@ Friend-Finder is deployed on heroku. Click [HERE](https://ancient-peak-55125.her
 See Xiong
 
 ## License:
-This project is licensed under Trilogy/University of Minnesota.
+This project is licensed under University of Minnesota.
 
 
